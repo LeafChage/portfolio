@@ -53,8 +53,10 @@ class BlogContentComponent extends React.Component<
   }
 
   // React Lifecycle
-  componentDidUpdate() {
-    this.fetchContent();
+  componentDidUpdate(prevProps: BlogContentProps) {
+    if (this.props.blog?.id != prevProps.blog?.id) {
+      this.fetchContent();
+    }
   }
 
   componentDidMount() {
