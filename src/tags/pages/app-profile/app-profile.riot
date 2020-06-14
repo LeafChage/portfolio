@@ -1,0 +1,70 @@
+<app-profile>
+  <div id="top">
+    <img src="https://avatars2.githubusercontent.com/u/18657444?s=460&u=3c5563778bc80f0637307e0ddcaa3f14d285950a&v=4"
+      alt="chage's icon"></img>
+    <h1>LeafChage</h1>
+    <p>
+      This is a profile, isn't this? <br>
+      What do you think?
+    </p>
+  </div>
+
+  <div id="skillset">
+    <app-headline title="SkillSet"></app-headline>
+    <ul>
+      <li each={ skill in skills }>
+        <p>
+          <app-emoji label={skill.label} value={skill.icon}></app-emoji> {skill.name}<span class="min">{" " +
+            skill.experience + " "}</span>
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div id="weaknesses">
+    <app-headline title="Weaknesses"></app-headline>
+    <ul>
+      <li each={ weak in weaknesses }>
+        <p>{weak.label}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div id="products">
+    <app-headline title="Little Funny Products"></app-headline>
+    <ul>
+      <li each={product in products}>
+        <p> <a href={product.link}>{product.title}({product.with})</a> </p>
+        <p class="min">{product.description}</span> </p>
+      </li>
+    </ul>
+  </div>
+  <script>
+    import * as Riot from "riot"; import "./app-profile.scss"
+    import Emoji from "/src/tags/parts/app-emoji.riot";
+    import Headline from "/src/tags/parts/app-headline.riot";
+    Riot.register("app-emoji", Emoji);
+    Riot.register("app-headline", Headline);
+
+    export default {
+      skills: [
+        { label: "mouse", icon: "🐭", name: "Golang", experience: "TCP, WebAPI" },
+        { label: "elephant", icon: "🐘", name: "PHP", experience: "WebAPI" },
+        { label: "TS", icon: "", name: "TypeScript", experience: "WebAPI" },
+        { label: "game", icon: "🎮", name: "Unity with C#", experience: "VR, etc." },
+        { label: "bird", icon: "🕊", name: "Swift", experience: "iOS app(But I forgot it)" },
+      ],
+      weaknesses: [
+        { label: "Android", detail: "I don't have enough skills for that." },
+        { label: "Web Frontend", detail: "I don't have enough skills for that." },
+        { label: "3DCG", detail: "I don't have enough skills for that." },
+        { label: "Optimization", detail: "I don't have enough skills for that." },
+      ],
+      products: [
+        { title: "FaceRolling", with: "Unity", link: "https://leafchage.github.io/FaceRolling/", description: "This is so interesting game in the world." },
+        { title: "Book", with: "Unity", link: "https://github.com/LeafChage/Book", description: "Pager for unity" },
+        { title: "PersonalKeymap", with: "Unity", link: "https://github.com/LeafChage/PersonalKeymap", description: "custmize keymap for unity" },
+        { title: "vivox-token", with: "TypeScript", link: "https://github.com/LeafChage/vivox-token", description: "making VAT for TypeScript and JavaScript" },
+      ]
+    }
+  </script>
+</app-profile>

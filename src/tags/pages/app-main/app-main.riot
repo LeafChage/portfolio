@@ -1,0 +1,13 @@
+<app-main>
+    <route path="/">
+        <app-profile></app-profile>
+    </route>
+    <route path="/profile">
+        <app-profile></app-profile>
+    </route>
+    <script>
+        import * as Riot from "riot";
+        import Profile from "/src/tags/pages/app-profile/app-profile";
+        Riot.register("app-profile", Profile);
+    </script>
+</app-main>

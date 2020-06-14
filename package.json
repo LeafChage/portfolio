@@ -1,0 +1,50 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "copy": "cp -r ./src/resources ./dist/",
+    "serve": "yarn copy; yarn format; parcel index.html -d docs",
+    "format": "prettier-eslint --write 'src/**/*.{js,scss,js,html}'",
+    "build": "yarn copy; yarn format; parcel build index.html -d docs"
+  },
+  "devDependencies": {
+    "@riotjs/compiler": "^4.8.5",
+    "@riotjs/hot-reload": "^4.0.1",
+    "@riotjs/parcel-plugin-riot": "^4.0.1",
+    "@types/axios": "^0.14.0",
+    "@types/node": "^14.0.5",
+    "marked": "^1.1.0",
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.0.5",
+    "prettier-eslint": "^10.1.1",
+    "prettier-eslint-cli": "^5.0.0",
+    "sass": "^1.26.5",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "@riotjs/route": "^5.3.2",
+    "axios": "^0.19.2",
+    "extend": "^3.0.0",
+    "highlight.js": "^10.0.3",
+    "remark-highlight.js": "^6.0.0",
+    "remark-html": "^11.0.2",
+    "remark-parse": "^8.0.2",
+    "riot": "^4.11.1",
+    "unified": "^9.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

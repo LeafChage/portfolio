@@ -1,0 +1,17 @@
+<app-header>
+  <ul>
+    <li each={link in links}>
+      <a href={link.link} class={ location.pathname.includes(link.page) ? "current" : "other" }>{link.title}</a>
+    </li>
+  </ul>
+
+  <script>
+    import { URL, Page } from "/src/config/setting";
+    import "./app-header.scss";
+    export default {
+      links: [
+        { link: URL.Profile, title: "Profile", page: Page.Profile },
+      ],
+    }
+  </script>
+</app-header>

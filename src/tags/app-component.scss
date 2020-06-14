@@ -1,0 +1,56 @@
+#root {
+  margin: 0;
+  min-height: 100vh;
+  color: #666666;
+
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "...... main   ......"
+    "footer footer footer";
+
+  /* smartphone */
+  @media screen and (max-width: 768px) {
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-columns: 30px 1fr 30px;
+  }
+
+  /* PC */
+  @media screen and (min-width: 768px) {
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-columns: 200px 1fr 200px;
+  }
+
+  app-header {
+    grid-area: header;
+  }
+
+  app-header:after {
+    @extend .line;
+  }
+
+  app-main {
+    grid-area: main;
+  }
+
+  app-footer {
+    grid-area: footer;
+  }
+
+  app-footer:before {
+    @extend .line;
+  }
+
+  .line {
+    content: "";
+    display: inline-block;
+    background-color: #999999;
+    position: absolute;
+    left: 50%;
+    height: 0.5px;
+    width: 75%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+}

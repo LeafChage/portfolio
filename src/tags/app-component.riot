@@ -1,0 +1,21 @@
+<app-component>
+  <router>
+    <app-header></app-header>
+    <app-main></app-main>
+    <app-footer></app-footer>
+  </router>
+  <script>
+    import * as Riot from "riot";
+    import "./app-component.scss"
+    import Header from "/src/tags/pages/app-header/app-header.riot";
+    import Main from "/src/tags/pages/app-main/app-main.riot";
+    import Footer from "/src/tags/pages/app-footer/app-footer.riot";
+    import { Router, Route } from '@riotjs/route';
+
+    Riot.register("route", Route);
+    Riot.register("router", Router);
+    Riot.register("app-header", Header);
+    Riot.register("app-main", Main);
+    Riot.register("app-footer", Footer);
+  </script>
+</app-component>
